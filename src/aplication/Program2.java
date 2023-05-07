@@ -32,12 +32,19 @@ public class Program2 {
 			System.out.println(obj);
 		}
 		
-		sc.close();
 		
 		System.out.println("\n=== Test 4: Department update ===");	
 		dep = departmentDao.findById(7);
 		dep.setName("Tecnology");
 		departmentDao.update(dep);
 		System.out.println("Update completed!");
+		
+		System.out.println("\n=== Test 5: Department delete ===");
+		System.out.print("Enter id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed!");
+		
+		sc.close();
 	}
 }
